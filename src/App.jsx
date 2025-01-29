@@ -43,12 +43,10 @@ function App() {
   };
 
   return (
-    <div
-      className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-purple-800 p-6 text-white"
-    >
-      {/* Title Positioned at Top Left with Custom Font */}
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-purple-800 p-6 text-white">
+      
       <motion.h1
-        className="text-5xl font-bold mb-6 absolute top-6 left-6 text-white"
+        className="text-4xl sm:text-5xl font-bold mb-6 absolute top-6 left-6 text-white"
         style={{ fontFamily: "'Pacifico', cursive" }}
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -57,14 +55,14 @@ function App() {
         CHILL PASS GENERATOR
       </motion.h1>
 
-      {/* Password Generator Positioned to Left */}
+      
       <motion.div
-        className="flex justify-start items-center w-full max-w-4xl mt-20"
+        className="flex justify-center items-center w-full mt-20"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Card className="bg-blue-900/80 backdrop-blur-md p-6 rounded-2xl shadow-lg w-96 border border-white/30">
+        <Card className="bg-blue-900/80 backdrop-blur-md p-6 rounded-2xl shadow-lg w-96 sm:w-80 md:w-96 lg:w-96 xl:w-96 border border-white/30">
           <CardContent className="text-left">
             {/* Password Display */}
             <Typography
@@ -74,7 +72,7 @@ function App() {
               {password}
             </Typography>
 
-            {/* Copy Button */}
+            
             <Button
               onClick={copyToClipboard}
               variant="contained"
@@ -85,7 +83,7 @@ function App() {
               Copy Password
             </Button>
 
-            {/* Length Slider */}
+            
             <div className="mb-4">
               <Typography gutterBottom className="text-white">Length: {length}</Typography>
               <Slider
@@ -100,7 +98,7 @@ function App() {
               />
             </div>
 
-            {/* Toggle Options */}
+           
             <FormControlLabel
               control={<Switch checked={includeNumbers} onChange={() => setIncludeNumbers(!includeNumbers)} />}
               label="Include Numbers"
@@ -115,7 +113,18 @@ function App() {
         </Card>
       </motion.div>
 
-      {/* Toast Container */}
+     
+<motion.footer
+  className="w-full py-4 mt-auto bg-gradient-to-t from-purple-800 via-transparent to-transparent text-center text-white text-lg font-bold"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.5 }}
+>
+   © 1914 Chill - All Rights Reserved
+</motion.footer>
+
+
+      
       <ToastContainer />
     </div>
   );
